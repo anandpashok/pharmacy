@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Submit Buttons Example</title>
+    <style>
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      button {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="button-container">
+      <a href="{% url 'manager_purchase'%}" class="btn btn-outline-primary">Purchase</a>
+                    <a href="{% url 'med_stock'%}" class="btn btn-outline-success">Inventory</a>
+
+    </div>
+  </body>
+</html>

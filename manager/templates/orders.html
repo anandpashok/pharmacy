@@ -1,0 +1,22 @@
+
+{% block content %}
+  <h1>Order List</h1>
+  <ul>
+    {% for order in orders %}
+      <li>
+        Customer Name: {{ order.cut_name }}
+        <br>
+        {% for item in order.orderitem_set.all %}
+          Medicine Name: {{ item.medicine_name }}, Quantity: {{ item.quantity }}
+          {% if item.prescription %}
+            , Prescription: {{ item.prescription }}
+          {% endif %}
+          <br>
+        {% endfor %}
+          {% csrf_token %}
+          <a href="{% url 'approve'%}" class="btn btn-outline-primary">approve</a>
+        </form>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
